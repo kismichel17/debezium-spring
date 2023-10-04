@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/filter_debezium
+    username: docker
+    password: docker
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
