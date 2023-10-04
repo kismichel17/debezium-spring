@@ -7,7 +7,7 @@ services:
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=exampledb
+      - POSTGRES_DB=filter_debezium
 
   zookeeper:
     image: confluentinc/cp-zookeeper
