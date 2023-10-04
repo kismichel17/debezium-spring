@@ -8,6 +8,10 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=filter_debezium
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
 
   zookeeper:
     image: confluentinc/cp-zookeeper
