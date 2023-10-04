@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.kismi.debeziumspring.repository.FilterRepository;
 
+import java.util.UUID;
+
 @RestController
 public class FilterController {
 
@@ -16,7 +18,9 @@ public class FilterController {
     }
 
     @GetMapping
-    public void fillFilters() {
-
+    public void changeFilter() {
+        var filter = filterRepository.findById(1L).orElseThrow();
+        filter.setDescription(UUID.randomUUID().toString());
+        filterRepository.save(filter);
     }
 }

@@ -2,10 +2,16 @@ package ru.kismi.debeziumspring.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Filter implements Serializable {
 
     @Id
@@ -14,13 +20,4 @@ public class Filter implements Serializable {
     private String name;
 
     private String description;
-
-    public Filter(Long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
-
-    public Filter() {
-    }
 }
