@@ -43,6 +43,12 @@ services:
     ports:
       - 8083:8083
 
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on: [postgres]
+
 #  schema-registry:
 #    image: confluentinc/cp-schema-registry:5.5.3
 #    environment:
