@@ -22,10 +22,7 @@ public class DebeziumSpringApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         var filters = List.of(
-                new Filter(1L, "filter1", "filter1"),
-                new Filter(2L, "filter2", "filter2"),
-                new Filter(3L, "filter3", "filter3"),
-                new Filter(4L, "filter4", "filter4")
+                new Filter(1L, "filter1", "filter1")
         );
 
         filterRepository.saveAll(filters);

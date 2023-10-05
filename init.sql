@@ -1,1 +1,1 @@
-ALTER TABLE public.filter REPLICA IDENTITY FULL;
+ALTER TABLE filter_debezium.public.filter REPLICA IDENTITY FULL;
