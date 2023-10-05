@@ -24,7 +24,7 @@ public class FilterController {
     @GetMapping("/1")
     public void changeFilterDescription() {
         log.info("Change filter");
-        var filter = filterRepository.findAll().get(0);
+        var filter = filterRepository.findById(1L).orElseThrow();
         filter.setDescription("new description-" + UUID.randomUUID());
         filterRepository.save(filter);
     }
@@ -32,7 +32,7 @@ public class FilterController {
     @GetMapping("/2")
     public void changeFilterName() {
         log.info("Change filter");
-        var filter = filterRepository.findAll().get(0);
+        var filter = filterRepository.findById(1L).orElseThrow();
         filter.setName("new name-" + UUID.randomUUID());
         filterRepository.save(filter);
     }
@@ -40,7 +40,7 @@ public class FilterController {
     @GetMapping("/3")
     public void deleteFilter() {
         log.info("Change filter");
-        var filter = filterRepository.findAll().get(0);
+        var filter = filterRepository.findById(1L).orElseThrow();
         filterRepository.delete(filter);
     }
 
