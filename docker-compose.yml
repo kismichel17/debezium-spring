@@ -2,6 +2,7 @@ version: "3.7"
 services:
   postgres:
     image: postgres:14.9
+    restart: on-failure
     ports:
       - 5432:5432
     environment:
@@ -34,6 +35,7 @@ services:
 
   debezium:
     image: debezium/connect:1.4
+    restart: on-failure
     environment:
       BOOTSTRAP_SERVERS: kafka:9092
       GROUP_ID: 1
@@ -49,6 +51,7 @@ services:
 
   app:
     build: .
+    restart: on-failure
     ports:
       - "8080:8080"
     depends_on: [postgres, kafka]
