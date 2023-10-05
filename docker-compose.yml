@@ -51,7 +51,7 @@ services:
     build: .
     ports:
       - "8080:8080"
-    depends_on: [postgres]
+    depends_on: [postgres, kafka]
 
 #  schema-registry:
 #    image: confluentinc/cp-schema-registry:5.5.3
