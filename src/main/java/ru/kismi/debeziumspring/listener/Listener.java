@@ -8,6 +8,7 @@ import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -20,7 +21,7 @@ public class Listener {
 
     @KafkaHandler
     @SneakyThrows
-    public void handleMessage(Map<Object, Object> message) {
+    public void handleMessage(List<Object> message) {
         log.info("================ new event ============\n\n");
         log.info(objectMapper.writeValueAsString(message));
     }
