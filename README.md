@@ -1,3 +1,5 @@
+## Примеры json, которые пишет Debezium в Kafka
+
 ### Таблица из примера
 
 ![img.png](img.png)
