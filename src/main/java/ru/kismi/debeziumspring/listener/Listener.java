@@ -9,7 +9,6 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @Component
@@ -25,4 +24,11 @@ public class Listener {
         log.info("================ new event ============\n\n");
         log.info(objectMapper.writeValueAsString(message));
     }
+
+//    @KafkaHandler
+//    @SneakyThrows
+//    public void handleMessages(Object message) {
+//        log.info("================ new event ============\n\n");
+//        log.info(objectMapper.writeValueAsString(message));
+//    }
 }
