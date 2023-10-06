@@ -1,9 +1,36 @@
+### Таблица из примера
 
+![img.png](img.png)
 
+### Пример key из сообщений в Kafka
 
-// При подключении Debezium в 1 раз получаем событие в Kafka
-[
-  {
+```json
+{
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "type": "int64",
+        "optional": false,
+        "field": "id"
+      }
+    ],
+    "optional": false,
+    "name": "postgres.public.filter.Key"
+  },
+  "payload": {
+    "id": 1
+  }
+}
+```
+
+### Примеры value из сообщений в Kafka
+
+<details>
+<summary>При подключении Debezium к Postgres в 1 раз</summary>
+
+```json
+{
     "schema": {
       "type": "struct",
       "fields": [
@@ -182,13 +209,18 @@
       "ts_ms": 1696575276384,
       "transaction": null
     }
-  },
+  }
+```
+
+</details>
 
 
 
-  // При обновлении description
+<details>
+<summary>При обновлении description</summary>
 
-  {
+```json
+ {
     "schema": {
       "type": "struct",
       "fields": [
@@ -371,12 +403,17 @@
       "ts_ms": 1696575522254,
       "transaction": null
     }
-  },
+  }
+```
+
+</details>
 
 
+<details>
+<summary>При обновлении name</summary>
 
-  // При обновлении name
-  {
+```json
+{
     "schema": {
       "type": "struct",
       "fields": [
@@ -559,13 +596,17 @@
       "ts_ms": 1696575649400,
       "transaction": null
     }
-  },
+  }
+```
+
+</details>
 
 
+<details>
+<summary>При удалении</summary>
 
-  // При удалении
-
-  {
+```json
+ {
     "schema": {
       "type": "struct",
       "fields": [
@@ -744,13 +785,17 @@
       "ts_ms": 1696575932512,
       "transaction": null
     }
-  },
+  }
+```
+
+</details>
 
 
+<details>
+<summary>При вставке</summary>
 
-  // При вставке
-
-  {
+```json
+ {
     "schema": {
       "type": "struct",
       "fields": [
@@ -930,4 +975,6 @@
       "transaction": null
     }
   }
-]
+```
+
+</details>
